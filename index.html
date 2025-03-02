@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naman Jha - Professional Resume</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Naman Jha - Computer Science student at University of Guelph with expertise in full-stack development, IT support, and software engineering.">
+    <meta name="keywords" content="Naman Jha, Computer Science, University of Guelph, Full-Stack Developer, Software Engineer, IT Support, React, Java, Python">
+    <meta name="author" content="Naman Jha">
+    
+    <!-- Open Graph tags for better social media sharing -->
+    <meta property="og:title" content="Naman Jha - Computer Science Professional">
+    <meta property="og:description" content="Computer Science student with skills in full-stack development, multiple programming languages, and IT support experience.">
+    <meta property="og:image" content="https://naman1803.github.io/images/Profile.jpeg">
+    <meta property="og:url" content="https://naman1803.github.io">
+    <meta property="og:type" content="website">
+    
     <style>
         /* Base styles and variables */
-        .contact-item a {
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
         :root {
             --primary-color: #2a63eb;
             --secondary-color: #f2f5fd;
@@ -90,6 +95,15 @@
         
         .contact-item i {
             font-size: 1.2rem;
+        }
+        
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
         }
         
         /* Main Content */
@@ -383,7 +397,6 @@
     <header>
         <div class="profile-container">
             <img class="profile-img" src="images/Profile.jpeg" alt="Naman Jha Profile Picture">
-
             <h1 class="name">Naman Jha</h1>
             <p class="title">Computer Science Student</p>
             <div class="contact-info">
@@ -539,7 +552,7 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img class="project-img" src="/api/placeholder/400/300" alt="Waterwize App">
+                    <img class="project-img" src="images/waterwize-project.jpg" alt="Waterwize App">
                     <div class="project-info">
                         <h3 class="project-title">Waterwize App</h3>
                         <p>A full-stack application that visualizes and tracks pollutant data from lakes across Ontario, providing environmental insights to users.</p>
@@ -552,7 +565,7 @@
                 </div>
                 
                 <div class="project-card">
-                    <img class="project-img" src="/api/placeholder/400/300" alt="Weather App">
+                    <img class="project-img" src="images/weather-project.jpg" alt="Weather App">
                     <div class="project-info">
                         <h3 class="project-title">Weather App</h3>
                         <p>A cross-platform weather application developed for both iOS and Android that provides accurate and fast weather forecasts.</p>
@@ -565,7 +578,7 @@
                 </div>
                 
                 <div class="project-card">
-                    <img class="project-img" src="/api/placeholder/400/300" alt="Chess Move Predictor">
+                    <img class="project-img" src="images/chess-project.jpg" alt="Chess Move Predictor">
                     <div class="project-info">
                         <h3 class="project-title">Chess Move Predictor</h3>
                         <p>A machine learning application that predicts optimal chess moves using deep learning techniques, with a user-friendly interface.</p>
@@ -579,7 +592,7 @@
             </div>
         </section>
 
-        <!-- Contact Form Section -->
+        <!-- Certifications Section -->
         <section id="certifications">
             <h2 class="section-title">Certifications</h2>
             <div class="education-item">
@@ -592,24 +605,32 @@
             </div>
         </section>
         
+        <!-- Contact Form Section -->
         <section id="contact">
             <h2 class="section-title">Get In Touch</h2>
-            <form class="contact-form">
+            <form action="https://formsubmit.co/njha@uoguelph.ca" method="POST" class="contact-form">
+                <input type="hidden" name="_subject" value="New message from your resume website!">
+                <input type="hidden" name="_next" value="https://naman1803.github.io/thanks.html">
+                <!-- Helps prevent spam -->
+                <input type="text" name="_honey" style="display:none">
+                <!-- Disable captcha -->
+                <input type="hidden" name="_captcha" value="false">
+                
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" class="form-control" required>
+                    <input type="text" id="name" name="name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" class="form-control" required>
+                    <input type="email" id="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" id="subject" class="form-control" required>
+                    <input type="text" id="subject" name="subject" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" class="form-control" required></textarea>
+                    <textarea id="message" name="message" class="form-control" required></textarea>
                 </div>
                 <button type="submit" class="btn">Send Message</button>
             </form>
@@ -624,14 +645,5 @@
         </div>
         <p class="copyright">© 2025 Naman Jha. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        // Simple form submission handling
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! In a real website, this would send your message to the website owner.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
