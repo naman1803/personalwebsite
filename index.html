@@ -396,7 +396,8 @@
     <!-- Header Section -->
     <header>
         <div class="profile-container">
-            <img class="profile-img" src="images/Profile.jpeg" alt="Naman Jha Profile Picture">
+            <!-- FIXED: Changed image path to absolute path with /personalwebsite prefix -->
+            <img class="profile-img" src="/personalwebsite/images/Profile.jpeg" alt="Naman Jha Profile Picture">
             <h1 class="name">Naman Jha</h1>
             <p class="title">Computer Science Student</p>
             <div class="contact-info">
@@ -552,7 +553,8 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img class="project-img" src="images/lakes.jpeg" alt="Waterwize App">
+                    <!-- FIXED: Changed image path to absolute path with /personalwebsite prefix -->
+                    <img class="project-img" src="/personalwebsite/images/lakes.jpeg" alt="Waterwize App">
                     <div class="project-info">
                         <h3 class="project-title">Waterwize App</h3>
                         <p>A full-stack application that visualizes and tracks pollutant data from lakes across Ontario, providing environmental insights to users.</p>
@@ -565,7 +567,8 @@
                 </div>
                 
                 <div class="project-card">
-                    <img class="project-img" src="images/weather.jpeg" alt="Weather App">
+                    <!-- FIXED: Changed image path to absolute path with /personalwebsite prefix -->
+                    <img class="project-img" src="/personalwebsite/images/weather.jpeg" alt="Weather App">
                     <div class="project-info">
                         <h3 class="project-title">Weather App</h3>
                         <p>A cross-platform weather application developed for both iOS and Android that provides accurate and fast weather forecasts.</p>
@@ -578,7 +581,8 @@
                 </div>
                 
                 <div class="project-card">
-                    <img class="project-img" src="images/ChessPhoto.jpeg" alt="Chess Move Predictor">
+                    <!-- FIXED: Changed image path to absolute path with /personalwebsite prefix -->
+                    <img class="project-img" src="/personalwebsite/images/ChessPhoto.jpeg" alt="Chess Move Predictor">
                     <div class="project-info">
                         <h3 class="project-title">Chess Move Predictor</h3>
                         <p>A machine learning application that predicts optimal chess moves using deep learning techniques, with a user-friendly interface.</p>
@@ -608,9 +612,11 @@
         <!-- Contact Form Section -->
         <section id="contact">
             <h2 class="section-title">Get In Touch</h2>
+            <!-- FIXED: Updated FormSubmit integration -->
             <form action="https://formsubmit.co/njha@uoguelph.ca" method="POST" class="contact-form">
-                <input type="hidden" name="_subject" value="New message from your resume website!">
+                <!-- FIXED: Updated redirect URL with full absolute path -->
                 <input type="hidden" name="_next" value="https://naman1803.github.io/personalwebsite/thanks.html">
+                <input type="hidden" name="_subject" value="New message from your resume website!">
                 <!-- Helps prevent spam -->
                 <input type="text" name="_honey" style="display:none">
                 <!-- Disable captcha -->
