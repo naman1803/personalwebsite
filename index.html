@@ -1,655 +1,650 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naman Jha - Professional Resume</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Naman Jha - Computer Science student at University of Guelph with expertise in full-stack development, IT support, and software engineering.">
-    <meta name="keywords" content="Naman Jha, Computer Science, University of Guelph, Full-Stack Developer, Software Engineer, IT Support, React, Java, Python">
-    <meta name="author" content="Naman Jha">
-    
-    <!-- Open Graph tags for better social media sharing -->
-    <meta property="og:title" content="Naman Jha - Computer Science Professional">
-    <meta property="og:description" content="Computer Science student with skills in full-stack development, multiple programming languages, and IT support experience.">
-    <!-- The og:image can remain absolute for social media previews -->
-    <meta property="og:image" content="https://naman1803.github.io/personalwebsite/images/Profile.jpeg">
-    <meta property="og:url" content="https://naman1803.github.io/personalwebsite">
-    <meta property="og:type" content="website">
-    
-    <style>
-        /* Base styles and variables */
-        :root {
-            --primary-color: #2a63eb;
-            --secondary-color: #f2f5fd;
-            --text-color: #333;
-            --light-text: #666;
-            --accent: #2a63eb;
-            --border: #ddd;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: #fcfcfc;
-        }
-        
-        /* Header Section */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        .profile-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            margin-bottom: 1rem;
-            background-color: #e0e0e0;
-        }
-        
-        .name {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .title {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .contact-item i {
-            font-size: 1.2rem;
-        }
-        
-        .contact-item a {
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        section {
-            margin-bottom: 3rem;
-        }
-        
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-        
-        /* About Section */
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-        
-        /* Skills Section */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        
-        .skill-category {
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .skill-category h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .skill-item {
-            background-color: var(--secondary-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid var(--border);
-        }
-        
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            margin-left: 1rem;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background-color: var(--border);
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -0.5rem;
-            top: 0.5rem;
-            height: 1rem;
-            width: 1rem;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-        }
-        
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .job-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        .company {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-            color: var(--primary-color);
-        }
-        
-        .period {
-            font-size: 0.9rem;
-            color: var(--light-text);
-            margin-bottom: 0.75rem;
-        }
-        
-        .job-description {
-            margin-bottom: 0.5rem;
-        }
-        
-        .achievements {
-            padding-left: 1.5rem;
-        }
-        
-        .achievements li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Education Section */
-        .education-item {
-            margin-bottom: 1.5rem;
-        }
-        
-        .education-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .degree {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        .school {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
-            color: var(--primary-color);
-        }
-        
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background-color: #e0e0e0;
-        }
-        
-        .project-info {
-            padding: 1.5rem;
-        }
-        
-        .project-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
-        .project-tag {
-            background-color: var(--secondary-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        /* Contact Form Section */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: #1a53db;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .social-link {
-            color: white;
-            font-size: 1.5rem;
-        }
-        
-        .copyright {
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .profile-img {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .name {
-                font-size: 2rem;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <!-- Font Awesome for icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naman Jha - Professional Resume</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Naman Jha - Computer Science student at University of Guelph with expertise in full-stack development, IT support, and software engineering.">
+  <meta name="keywords" content="Naman Jha, Computer Science, University of Guelph, Full-Stack Developer, Software Engineer, IT Support, React, Java, Python">
+  <meta name="author" content="Naman Jha">
+
+  <!-- Open Graph tags for better social media sharing -->
+  <meta property="og:title" content="Naman Jha - Computer Science Professional">
+  <meta property="og:description" content="Computer Science student with skills in full-stack development, multiple programming languages, and IT support experience.">
+  <meta property="og:image" content="https://naman1803.github.io/personalwebsite/images/Profile.jpeg">
+  <meta property="og:url" content="https://naman1803.github.io/personalwebsite">
+  <meta property="og:type" content="website">
+
+  <style>
+    /* Base styles and variables */
+    :root {
+      --primary-color: #2a63eb;
+      --secondary-color: #f2f5fd;
+      --text-color: #333;
+      --light-text: #666;
+      --accent: #2a63eb;
+      --border: #ddd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      color: var(--text-color);
+      line-height: 1.6;
+      background-color: #fcfcfc;
+    }
+
+    /* Header Section */
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      margin-bottom: 1rem;
+      background-color: #e0e0e0;
+    }
+
+    .name {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-item i {
+      font-size: 1.2rem;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    /* About Section */
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    /* Skills Section */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skill-category {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .skill-category h3 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-item {
+      background-color: var(--secondary-color);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+    }
+
+    /* Experience Section */
+    .timeline {
+      position: relative;
+      margin-left: 1rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background-color: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -0.5rem;
+      top: 0.5rem;
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .company {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: var(--primary-color);
+    }
+
+    .period {
+      font-size: 0.9rem;
+      color: var(--light-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .job-description {
+      margin-bottom: 0.5rem;
+    }
+
+    .achievements {
+      padding-left: 1.5rem;
+    }
+
+    .achievements li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Education Section */
+    .education-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .degree {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .school {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: var(--primary-color);
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Wrap project cards in an anchor for clickable links */
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: #e0e0e0;
+    }
+
+    .project-info {
+      padding: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .project-tag {
+      background-color: var(--secondary-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    /* Contact Form Section */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1a53db;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-link {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .profile-img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .name {
+        font-size: 2rem;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="profile-container">
-            <!-- UPDATED: Removed leading slash, now "images/Profile.jpeg" -->
-            <img class="profile-img" src="images/Profile.jpeg" alt="Naman Jha Profile Picture">
-            <h1 class="name">Naman Jha</h1>
-            <p class="title">Computer Science Student</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:njha@uoguelph.ca">njha@uoguelph.ca</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+14379707940">+1 437-970-7940</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Guelph, ON</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://linkedin.com/in/naman18jha" target="_blank">linkedin.com/in/naman18jha</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/naman1803" target="_blank">github.com/naman1803</a>
-                </div>
-            </div>
+  <!-- Header Section -->
+  <header>
+    <div class="profile-container">
+      <img class="profile-img" src="./images/Profile.jpeg" alt="Naman Jha Profile Picture">
+      <h1 class="name">Naman Jha</h1>
+      <p class="title">Computer Science Student</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:njha@uoguelph.ca">njha@uoguelph.ca</a>
         </div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <p class="about-text">
-                I am a dedicated Computer Science student at the University of Guelph with hands-on experience in IT support and software development. My technical expertise spans multiple programming languages and frameworks, with a particular focus on full-stack development. I enjoy creating innovative solutions to real-world problems, as demonstrated through my personal projects. I am passionate about developing efficient, user-friendly applications and am currently seeking opportunities to apply my technical skills in a professional environment.
-            </p>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">C</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">C++</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">R</span>
-                        <span class="skill-item">HTML5</span>
-                        <span class="skill-item">CSS3</span>
-                        <span class="skill-item">Julia</span>
-                        <span class="skill-item">Ada</span>
-                        <span class="skill-item">Cobol</span>
-                        <span class="skill-item">Fortran</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Technologies</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">React</span>
-                        <span class="skill-item">Spring Boot</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">GitLab</span>
-                        <span class="skill-item">Redux</span>
-                        <span class="skill-item">JUnit</span>
-                        <span class="skill-item">RESTful</span>
-                        <span class="skill-item">Agile</span>
-                        <span class="skill-item">CI/CD</span>
-                        <span class="skill-item">SonarQube</span>
-                        <span class="skill-item">UML Diagrams</span>
-                        <span class="skill-item">Wireframing</span>
-                        <span class="skill-item">iOS Development</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Testing & Methodologies</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">System Acceptance Testing</span>
-                        <span class="skill-item">Integration Testing</span>
-                        <span class="skill-item">Isolation Testing</span>
-                        <span class="skill-item">Full-Stack Development</span>
-                        <span class="skill-item">Problem Solving</span>
-                        <span class="skill-item">Troubleshooting</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3 class="job-title">IT/Automation Support Analyst</h3>
-                    <h4 class="company">Linamar</h4>
-                    <p class="period">May 2024 - August 2024</p>
-                    <p class="job-description">
-                        Provided technical support in an industrial automation environment, focusing on troubleshooting and system optimization.
-                    </p>
-                    <ul class="achievements">
-                        <li>Utilized CMMS software to troubleshoot issues with sensors and scanners, reducing downtime by 25%.</li>
-                        <li>Led investigations that resolved equipment alerts 20% faster through team collaboration.</li>
-                        <li>Logged data into cloud systems, boosting customer satisfaction by 15%.</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <h3 class="job-title">Guest Registration and Door Staff</h3>
-                    <h4 class="company">Student Housing Services, University of Guelph</h4>
-                    <p class="period">August 2022 - April 2023</p>
-                    <p class="job-description">
-                        Managed residence security and visitor management while providing excellent customer service to student residents.
-                    </p>
-                    <ul class="achievements">
-                        <li>Proficiently utilized Starrez Housing software to track and manage student residence data, ensuring accurate and up-to-date records.</li>
-                        <li>Assisted residents and visitors with a 95% satisfaction rate.</li>
-                        <li>Provided exceptional customer service by addressing resident inquiries, resolving concerns, and facilitating smooth communication between students and housing staff.</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <h3 class="job-title">IT Support Analyst</h3>
-                    <h4 class="company">Blue Bells Model School</h4>
-                    <p class="period">January 2020 - May 2021</p>
-                    <p class="job-description">
-                        Provided comprehensive IT support for a school environment, ensuring technology resources remained available and functional.
-                    </p>
-                    <ul class="achievements">
-                        <li>Collaborated with vendors to maintain 100% uptime for library tech resources.</li>
-                        <li>Provided troubleshooting support for a range of software applications, including Microsoft Word, Excel, and other Microsoft tools, while maintaining the functionality of library electronic devices and systems.</li>
-                        <li>Managed ticketing systems, reducing issue resolution times by 20%.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <h3 class="degree">Bachelor of Computing, Computer Science</h3>
-                <h4 class="school">University of Guelph</h4>
-                <p class="period">2021 - 2025</p>
-                <p>Pursuing a comprehensive computer science education with a focus on software development and system design.</p>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <!-- UPDATED: Removed leading slash, now "images/lakes.jpeg" -->
-                    <img class="project-img" src="images/lakes.jpeg" alt="Waterwize App">
-                    <div class="project-info">
-                        <h3 class="project-title">Waterwize App</h3>
-                        <p>A full-stack application that visualizes and tracks pollutant data from lakes across Ontario, providing environmental insights to users.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Full-Stack</span>
-                            <span class="project-tag">GitLab</span>
-                            <span class="project-tag">Data Visualization</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <!-- UPDATED: Removed leading slash, now "images/weather.jpeg" -->
-                    <img class="project-img" src="images/weather.jpeg" alt="Weather App">
-                    <div class="project-info">
-                        <h3 class="project-title">Weather App</h3>
-                        <p>A cross-platform weather application developed for both iOS and Android that provides accurate and fast weather forecasts.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Swift</span>
-                            <span class="project-tag">Kotlin</span>
-                            <span class="project-tag">iOS/Android</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <!-- UPDATED: Removed leading slash, now "images/ChessPhoto.jpeg" -->
-                    <img class="project-img" src="images/ChessPhoto.jpeg" alt="Chess Move Predictor">
-                    <div class="project-info">
-                        <h3 class="project-title">Chess Move Predictor</h3>
-                        <p>A machine learning application that predicts optimal chess moves using deep learning techniques, with a user-friendly interface.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">TensorFlow</span>
-                            <span class="project-tag">Deep Learning</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <h2 class="section-title">Certifications</h2>
-            <div class="education-item">
-                <h3 class="degree">CompTIA A+ Certification</h3>
-                <p>Validated foundational IT skills. Equipped with comprehensive problem-solving abilities to manage a wide range of computer hardware and software systems.</p>
-            </div>
-            <div class="education-item">
-                <h3 class="degree">Business Certificate, University of Guelph</h3>
-                <p>Acquired foundational knowledge in business strategy, financial management, and organizational leadership.</p>
-            </div>
-        </section>
-        
-        <!-- Contact Form Section -->
-        <section id="contact">
-            <h2 class="section-title">Get In Touch</h2>
-            <form action="https://formsubmit.co/njha@uoguelph.ca" method="POST" class="contact-form">
-                <!-- Helps FormSubmit redirect -->
-                <input type="hidden" name="_next" value="https://naman1803.github.io/personalwebsite/thanks.html">
-                <input type="hidden" name="_subject" value="New message from your resume website!">
-                <!-- Honeypot to prevent spam -->
-                <input type="text" name="_honey" style="display:none">
-                <!-- Disable captcha -->
-                <input type="hidden" name="_captcha" value="false">
-                
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" class="form-control" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/naman18jha" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/naman1803" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+14379707940">+1 437-970-7940</a>
         </div>
-        <p class="copyright">© 2025 Naman Jha. All Rights Reserved.</p>
-    </footer>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Guelph, ON</span>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://linkedin.com/in/naman18jha" target="_blank">linkedin.com/in/naman18jha</a>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <a href="https://github.com/naman1803" target="_blank">github.com/naman1803</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text">
+        I am a dedicated Computer Science student at the University of Guelph with hands-on experience in IT support and software development. My technical expertise spans multiple programming languages and frameworks, with a particular focus on full-stack development. I enjoy creating innovative solutions to real-world problems, as demonstrated through my personal projects. I am passionate about developing efficient, user-friendly applications and am currently seeking opportunities to apply my technical skills in a professional environment.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Languages</h3>
+          <div class="skill-list">
+            <span class="skill-item">C</span>
+            <span class="skill-item">Java</span>
+            <span class="skill-item">C++</span>
+            <span class="skill-item">Python</span>
+            <span class="skill-item">MySQL</span>
+            <span class="skill-item">JavaScript</span>
+            <span class="skill-item">R</span>
+            <span class="skill-item">HTML5</span>
+            <span class="skill-item">CSS3</span>
+            <span class="skill-item">Julia</span>
+            <span class="skill-item">Ada</span>
+            <span class="skill-item">Cobol</span>
+            <span class="skill-item">Fortran</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Frameworks & Technologies</h3>
+          <div class="skill-list">
+            <span class="skill-item">React</span>
+            <span class="skill-item">Spring Boot</span>
+            <span class="skill-item">Docker</span>
+            <span class="skill-item">GitLab</span>
+            <span class="skill-item">Redux</span>
+            <span class="skill-item">JUnit</span>
+            <span class="skill-item">RESTful</span>
+            <span class="skill-item">Agile</span>
+            <span class="skill-item">CI/CD</span>
+            <span class="skill-item">SonarQube</span>
+            <span class="skill-item">UML Diagrams</span>
+            <span class="skill-item">Wireframing</span>
+            <span class="skill-item">iOS Development</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Testing & Methodologies</h3>
+          <div class="skill-list">
+            <span class="skill-item">System Acceptance Testing</span>
+            <span class="skill-item">Integration Testing</span>
+            <span class="skill-item">Isolation Testing</span>
+            <span class="skill-item">Full-Stack Development</span>
+            <span class="skill-item">Problem Solving</span>
+            <span class="skill-item">Troubleshooting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3 class="job-title">IT/Automation Support Analyst</h3>
+          <h4 class="company">Linamar</h4>
+          <p class="period">May 2024 - August 2024</p>
+          <p class="job-description">
+            Provided technical support in an industrial automation environment, focusing on troubleshooting and system optimization.
+          </p>
+          <ul class="achievements">
+            <li>Utilized CMMS software to troubleshoot issues with sensors and scanners, reducing downtime by 25%.</li>
+            <li>Led investigations that resolved equipment alerts 20% faster through team collaboration.</li>
+            <li>Logged data into cloud systems, boosting customer satisfaction by 15%.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3 class="job-title">Guest Registration and Door Staff</h3>
+          <h4 class="company">Student Housing Services, University of Guelph</h4>
+          <p class="period">August 2022 - April 2023</p>
+          <p class="job-description">
+            Managed residence security and visitor management while providing excellent customer service to student residents.
+          </p>
+          <ul class="achievements">
+            <li>Proficiently utilized Starrez Housing software to track and manage student residence data, ensuring accurate and up-to-date records.</li>
+            <li>Assisted residents and visitors with a 95% satisfaction rate.</li>
+            <li>Provided exceptional customer service by addressing resident inquiries, resolving concerns, and facilitating smooth communication between students and housing staff.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3 class="job-title">IT Support Analyst</h3>
+          <h4 class="company">Blue Bells Model School</h4>
+          <p class="period">January 2020 - May 2021</p>
+          <p class="job-description">
+            Provided comprehensive IT support for a school environment, ensuring technology resources remained available and functional.
+          </p>
+          <ul class="achievements">
+            <li>Collaborated with vendors to maintain 100% uptime for library tech resources.</li>
+            <li>Provided troubleshooting support for a range of software applications, including Microsoft Word, Excel, and other Microsoft tools, while maintaining the functionality of library electronic devices and systems.</li>
+            <li>Managed ticketing systems, reducing issue resolution times by 20%.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="education-item">
+        <h3 class="degree">Bachelor of Computing, Computer Science</h3>
+        <h4 class="school">University of Guelph</h4>
+        <p class="period">2021 - 2025</p>
+        <p>Pursuing a comprehensive computer science education with a focus on software development and system design.</p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <!-- Waterwize App (non-clickable) -->
+        <div class="project-card">
+          <img class="project-img" src="./images/lakes.jpeg" alt="Waterwize App">
+          <div class="project-info">
+            <h3 class="project-title">Waterwize App</h3>
+            <p>A full-stack application that visualizes and tracks pollutant data from lakes across Ontario, providing environmental insights to users.</p>
+            <div class="project-tags">
+              <span class="project-tag">Full-Stack</span>
+              <span class="project-tag">GitLab</span>
+              <span class="project-tag">Data Visualization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather App (clickable) -->
+        <a class="project-card" href="https://github.com/naman1803/weatherappclone" target="_blank">
+          <img class="project-img" src="./images/weather.jpeg" alt="Weather App">
+          <div class="project-info">
+            <h3 class="project-title">Weather App</h3>
+            <p>A cross-platform weather application developed for both iOS and Android that provides accurate and fast weather forecasts.</p>
+            <div class="project-tags">
+              <span class="project-tag">Swift</span>
+              <span class="project-tag">Kotlin</span>
+              <span class="project-tag">iOS/Android</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Chess Move Predictor (clickable) -->
+        <a class="project-card" href="https://github.com/naman1803/chessmovepredictor" target="_blank">
+          <img class="project-img" src="./images/ChessPhoto.jpeg" alt="Chess Move Predictor">
+          <div class="project-info">
+            <h3 class="project-title">Chess Move Predictor</h3>
+            <p>A machine learning application that predicts optimal chess moves using deep learning techniques, with a user-friendly interface.</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">TensorFlow</span>
+              <span class="project-tag">Deep Learning</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <h2 class="section-title">Certifications</h2>
+      <div class="education-item">
+        <h3 class="degree">CompTIA A+ Certification</h3>
+        <p>Validated foundational IT skills. Equipped with comprehensive problem-solving abilities to manage a wide range of computer hardware and software systems.</p>
+      </div>
+      <div class="education-item">
+        <h3 class="degree">Business Certificate, University of Guelph</h3>
+        <p>Acquired foundational knowledge in business strategy, financial management, and organizational leadership.</p>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+      <h2 class="section-title">Get In Touch</h2>
+      <form action="https://formsubmit.co/njha@uoguelph.ca" method="POST" class="contact-form">
+        <input type="hidden" name="_next" value="https://naman1803.github.io/personalwebsite/thanks.html">
+        <input type="hidden" name="_subject" value="New message from your resume website!">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/naman18jha" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/naman1803" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+    </div>
+    <p class="copyright">© 2025 Naman Jha. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
