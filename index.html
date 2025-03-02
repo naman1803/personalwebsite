@@ -58,9 +58,10 @@
       padding: 0 2rem;
     }
 
+    /* Scaled-down profile image */
     .profile-img {
-      width: 150px;
-      height: 150px;
+      width: 200px;         /* Adjust as needed */
+      height: 200px;        /* Keep the same or set to auto */
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid white;
@@ -257,7 +258,6 @@
       gap: 2rem;
     }
 
-    /* Wrap project cards in an anchor for clickable links */
     .project-card {
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -367,6 +367,7 @@
       font-size: 1.5rem;
     }
 
+    /* Copyright */
     .copyright {
       font-size: 0.9rem;
     }
@@ -374,8 +375,8 @@
     /* Responsive Design */
     @media (max-width: 768px) {
       .profile-img {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
       }
 
       .name {
@@ -392,6 +393,7 @@
       }
     }
   </style>
+
   <!-- Font Awesome for icons -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 </head>
@@ -399,6 +401,7 @@
   <!-- Header Section -->
   <header>
     <div class="profile-container">
+      <!-- Scaled-down profile photo -->
       <img class="profile-img" src="./Images/Profile.jpeg" alt="Naman Jha Profile Picture">
       <h1 class="name">Naman Jha</h1>
       <p class="title">Computer Science Student</p>
@@ -613,10 +616,12 @@
     <section id="contact">
       <h2 class="section-title">Get In Touch</h2>
       <form action="https://formsubmit.co/njha@uoguelph.ca" method="POST" class="contact-form">
+        <!-- FormSubmit redirect and settings -->
         <input type="hidden" name="_next" value="https://naman1803.github.io/personalwebsite/thanks.html">
         <input type="hidden" name="_subject" value="New message from your resume website!">
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_captcha" value="false">
+
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" class="form-control" required>
