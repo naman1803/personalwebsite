@@ -738,12 +738,15 @@
     <section id="contact">
       <h2 class="section-title">Get In Touch</h2>
       <form action="https://formsubmit.co/njha@uoguelph.ca" method="POST" class="contact-form">
-        <!-- FormSubmit redirect and settings -->
+        <!-- FormSubmit configuration -->
         <input type="hidden" name="_next" value="https://naman1803.github.io/personalwebsite/thanks.html">
         <input type="hidden" name="_subject" value="New message from your resume website!">
-        <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_captcha" value="false">
-
+        <!-- This line prevents spam by hiding a field that bots will try to fill -->
+        <input type="text" name="_honey" style="display:none">
+        <!-- Needed for FormSubmit email template -->
+        <input type="hidden" name="_template" value="table">
+    
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" class="form-control" required>
@@ -763,7 +766,6 @@
         <button type="submit" class="btn">Send Message</button>
       </form>
     </section>
-  </main>
 
   <!-- Footer -->
   <footer>
